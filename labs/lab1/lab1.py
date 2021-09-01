@@ -1,7 +1,9 @@
 """
 Name: Walker Harris
 lab1.py
-Problem: This function calculates the area of a rectangle
+Problem: This function calculates the area of a rectangle.
+Certification of Authenticity:
+I hereby certify that the following assignment is entirely my own work.
 """
 
 def calc_rec_area():

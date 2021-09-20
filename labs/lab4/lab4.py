@@ -1,10 +1,10 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Walker Harris
+lab4.py
 """
 
 from graphics import *
-
+from math import *
 
 def squares():
     """  <---  You can use tripled quotes to write a multi-line comment....
@@ -30,28 +30,32 @@ def squares():
 
     # create a space to instruct user
     inst_pt = Point(width / 2, height - 10)
-    instructions = Text(inst_pt, "Click to move circle")
+    instructions = Text(inst_pt, "Click to move square")
     instructions.draw(win)
 
-    # builds a circle
-    shape = Circle(Point(50, 50), 20)
+    # builds a square
+    shape = Rectangle(Point(50, 50), Point(70, 70))
     shape.setOutline("red")
     shape.setFill("red")
     shape.draw(win)
 
+
+
     # allows the user to click multiple times to move the circle
     for i in range(num_clicks):
-        p = win.getMouse()
-        c = shape.getCenter()  # center of circle
 
-        # move amount is distance from center of circle to the
-        # point where the user clicked
-        dx = p.getX() - c.getX()
-        dy = p.getY() - c.getY()
-        shape.move(dx, dy)
+
+        user_click = win.getMouse()
+        shape = Rectangle(Point(user_click.x - 10, user_click.y - 10), Point(user_click.x + 10, user_click.y + 10))
+        shape.setOutline("red")
+        shape.setFill("red")
+        shape.draw(win)
+
+    instructions.setText("Click again to quit.")
 
     win.getMouse()
     win.close()
+
 
 
 def rectangle():
@@ -62,14 +66,85 @@ def rectangle():
          Print the perimeter and area of the rectangle.
     Formulas: area = (length)(width)   and    perimeter = 2(length+width)
     """
+    width = 400
+    height = 400
+    win = GraphWin("Lab4 Rectangle", width, height)
+
+    p1 = win.getMouse()
+    p2 = win.getMouse()
+
+    rectangle = Rectangle(p1, p2)
+    rectangle.draw(win)
+
+    x1 = p1.getX()
+    x2 = p2.getX()
+    y1 = p1.getY()
+    y2 = p2.getY()
+
+    length = abs(x2 - x1)
+    width = abs(y2 - y1)
+    area = length * width
+    perimeter = 2 * (length + width)
+
+    txt = Text(Point(50,50), "The area is: " + str(area))
+    txt2 = Text(Point(80, 80), "The perimeter is: " + str(perimeter))
+    txt.draw(win)
+    txt2.draw(win)
+
+    inst_pt = Point(width / 2, height - 10)
+    instructions = Text(inst_pt, "Click again to close")
+    instructions.draw(win)
+
+    win.getMouse()
+    win.close()
+
     pass
 
+def circle():
+    width = 400
+    height = 400
+    win = GraphWin("Lab4 Cricle", width, height)
+
+    p1 = win.getMouse()
+    p2 = win.getMouse()
+    x1 = p1.getX()
+    x2 = p2.getX()
+    y1 = p1.getY()
+    y2 = p2.getY()
+    r = sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+
+    circle = Circle(p1, r)
+    circle.draw(win)
+    txt = Text(Point(100, 50), "The radius is: " + str(r))
+    txt.draw(win)
+
+
+
+    inst_pt = Point(width / 2, height - 10)
+    instructions = Text(inst_pt, "Click again to close")
+    instructions.draw(win)
+    win.getMouse()
+    win.close()
+
+
+def pi2():
+
+    n = eval(input("Enter the number of terms to sum: "))
+    acc = 0
+    for i in range(n):
+        num = 4
+        denom = 1 + 2 * i     #i = loop variable
+        frac = (num / denom) * ((-1) ** i)
+        acc = acc + frac
+
+    print(acc)
+    print(pi - acc)
 
 def main():
     squares()
-    # rectangle()
-    # circle()
-    # pi2()
+    rectangle()
+    circle()
+    pi2()
 
 
 main()

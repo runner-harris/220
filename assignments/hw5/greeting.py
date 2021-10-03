@@ -14,16 +14,10 @@ import graphics
 def main():
     win = graphics.GraphWin("Greeting Card", 400, 400)
 
-    pointa = graphics.Point(170, 150)
-    circa = graphics.Circle(pointa, 40)
-    circb = circa.clone()
-    circb.move(60, 0)
+    circa = graphics.Circle(graphics.Point(170, 150), 40)
     circa.setOutline("pink")
-    circb.setOutline("pink")
     circa.setFill("pink")
-    circb.setFill("pink")
     circa.draw(win)
-    circb.draw(win)
 
     triangle = graphics.Polygon(graphics.Point(130, 155),
                                 graphics.Point(270, 155), graphics.Point(200, 290))
@@ -32,7 +26,6 @@ def main():
     triangle.draw(win)
 
     arrow = graphics.Line(graphics.Point(0, 400), graphics.Point(50, 350))
-    arrow.setOutline("black")
     arrow.draw(win)
 
     feather1 = graphics.Line(graphics.Point(0, 390), graphics.Point(10, 390))
@@ -51,7 +44,17 @@ def main():
     greeting = graphics.Text(graphics.Point(200, 100), "Happy Valentines Day!")
     greeting.draw(win)
 
-    for _ in range(15):
+    circb = graphics.Circle(graphics.Point(230, 150), 40)
+    circb.setFill("pink")
+    circb.setOutline("pink")
+    circb.draw(win)
+    triangleb = graphics.Polygon(graphics.Point(200, 155),
+                                graphics.Point(270, 155), graphics.Point(200, 290))
+    triangleb.setOutline("pink")
+    triangleb.setFill("pink")
+    triangleb.draw(win)
+
+    for _ in range(15, 60):
         arrow.move(10, -10)
         feather1.move(10, -10)
         feather2.move(10, -10)

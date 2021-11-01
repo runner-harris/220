@@ -75,7 +75,7 @@ def main():
     # add function calls here
     # cash_conversion()
     # encode()
-    # encode_better()
+    encode_better()
     # surface_area()
     # volume()
     # total()

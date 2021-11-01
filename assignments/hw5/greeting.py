@@ -54,7 +54,7 @@ def main():
     triangleb.setFill("pink")
     triangleb.draw(win)
 
-    for _ in range(15, 60):
+    for _ in range(50):
         arrow.move(10, -10)
         feather1.move(10, -10)
         feather2.move(10, -10)
@@ -70,5 +70,5 @@ def main():
     win.close()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -7,7 +7,7 @@ def average():
     tests = eval(input("enter the amount of tests: "))
     acc = 0
     for i in range(tests):
-        hw = eval(input("Enter the hw grade: "))
+        hw = eval(input("Enter the hw grade: " + str(i + 1) + ":"))
         acc = acc + hw / tests
     print("This is the average", acc)
 
@@ -28,8 +28,9 @@ def newton():
 
 def sequence():
     num = eval(input("enter the number of items: "))
-    for i in range(1, num):
-         print(1 + (i // 2) * 2)
+    for i in range(num):
+        adder = (i + 1) % 2
+        print(i + adder, end=" ")
 
 
 def pi():
@@ -44,7 +45,8 @@ def pi():
 
 
 sequence()
-average()
-tip_jar()
-newton()
-pi()
+# average()
+# tip_jar()
+# newton()
+
+# pi()

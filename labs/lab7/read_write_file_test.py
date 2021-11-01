@@ -1,4 +1,4 @@
-## writeFile.py
+# writeFile.py
 # If the file does not exist, opening it for writing will cause it
 # to be created in the local folder.  If it does exist, the open
 # function will cause the file to be wiped clean.

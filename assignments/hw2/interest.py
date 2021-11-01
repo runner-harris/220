@@ -8,6 +8,8 @@ Certification of Authenticity:
 I hereby certify that all work on this assignment is entirely my own.
 
 """
+
+
 def main():
     apr = eval(input("enter the annual interest rate: "))
     days = eval(input("enter the number of days in the billing cycle: "))
